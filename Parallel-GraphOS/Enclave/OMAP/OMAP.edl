@@ -1,0 +1,32 @@
+enclave {
+
+    from "sgx_tsgxssl.edl" import *;
+
+    trusted {       
+        public void ecall_setup_oram(int max_size);		
+        public void ecall_read_node([in, count=10] const char *bid,[out,size=16] char* value, int instance);
+        public void ecall_write_node([in, count=10] const char *bid,[in,size=16]const char* value, int instance);
+        public double ecall_measure_oram_speed(int testSize);
+        public double ecall_measure_omap_speed(int testSize);
+        public double ecall_measure_eviction_speed(int testSize);
+        public double ecall_measure_oram_setup_speed(int testSize);
+        public double ecall_measure_omap_setup_speed(int testSize);
+        public void ecall_read_and_set_node([in, count=10] const char *bid,[out,size=16] char* value, int instance);
+        public void ecall_read_and_set_dist_node([in, count=10] const char *bid,[in,size=16]const char* value,[out,size=16] char* newValue, int instance);
+        public void ecall_start_oram_setup();
+        public void ecall_end_oram_setup(int instance);
+
+        public void ecall_setup_oheap();
+        public void ecall_dummy_heap_op();
+        public void ecall_set_new_minheap_node(int newMinHeapNodeV, int newMinHeapNodeDist);
+        public void ecall_extract_min_id([in,out,count=1]int* id, [in,out,count=1]int* dist);
+    };
+        
+    untrusted {        
+        void ocall_setup_ramStore(size_t num, int size);
+        size_t ocall_nread_ramStore(size_t blockCount,[in,count=blockCount]long long* indexes, [in,out,count=len] char *blk,size_t len, int instance);
+        void ocall_nwrite_ramStore(size_t blockCount,[in,count=blockCount]long long* indexes, [in, count=len] const char *blk,size_t len, int instance);
+        void ocall_initialize_ramStore(long long begin,long long end, [in, count=len] const char *block,size_t len, int instance);
+        void ocall_write_ramStore(long long pos, [in, count=len] const char *block,size_t len, int instance);
+    };
+};
