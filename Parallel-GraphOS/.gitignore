@@ -1,0 +1,16 @@
+.config_HW_DEBUG_x64
+nbproject
+/build/
+nbproject/*
+*.so
+.config_HW_DEBUG_x64
+App/*.o
+App/Enclave_u.c
+App/Enclave_u.h
+App/ORAM/*.o
+Enclave/*.o
+Enclave/Enclave_t.c
+Enclave/Enclave_t.h
+Enclave/ORAM/*.o
+app
+!/sample_libcrypto/libsample_libcrypto.so
