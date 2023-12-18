@@ -2,6 +2,7 @@
 #include <map>
 #include <array>
 #include <vector>
+#include <stdint.h>
 
 using namespace std;
 

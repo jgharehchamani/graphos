@@ -1,6 +1,7 @@
 enclave {
 
     from "sgx_tsgxssl.edl" import *;
+    from "sgx_pthread.edl" import *;
 
     trusted {       
         public void ecall_setup_oram(int max_size);		

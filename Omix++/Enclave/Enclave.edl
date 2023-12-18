@@ -6,6 +6,8 @@ enclave {
     from "sgx_tstdc.edl" import *;
 
     from "sgx_tkey_exchange.edl" import *;
+    from "sgx_pthread.edl" import *;
+
 
     include "sgx_key_exchange.h"
     include "sgx_trts.h"
