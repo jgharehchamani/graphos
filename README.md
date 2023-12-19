@@ -17,6 +17,13 @@ Install the above binary file in /opt/intel
 Execute the following command to allow the app to find libsample_crypto.so:
 sudo cp sample_libcrypto/libsample_libcrypto.so /usr/lib
 
+## SGX2 version of the code ###
+There are few changes in the SGX2 version of the code in comparison to SGX1, includeing:
+- adding -lsgx_pthread link flag in Makefile
+- importing "sgx_pthread.edl" in OMAP.edl and Enclave.edl
+- replacing the remote attestation code of Enclave.cpp with the new version of SGXSDK
+SGX2 version of Omix++ is available in [Omix++-SGX2 branch](https://github.com/jgharehchamani/graphos/tree/Omix%2B%2B-SGX2)
+
 ## Getting Started ###
 Oblix++, Omix++, GraphOS, and GraphOS parallel version are provided in four separate subfolders. Use the following instruction to build them:
 
