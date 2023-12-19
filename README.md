@@ -12,16 +12,22 @@ Our schemes were tested with the following configuration
 - SGX Driver = 2.6
 
 Install IntelSGX Driver from https://github.com/intel/linux-sgx-driver/archive/refs/tags/sgx_driver_2.6.zip
+
 Install SGX SDK 2.4: https://github.com/intel/linux-sgx/archive/refs/tags/sgx_2.4.zip
+
 Install the above binary file in /opt/intel
+
 Execute the following command to allow the app to find libsample_crypto.so:
+
 sudo cp sample_libcrypto/libsample_libcrypto.so /usr/lib
 
 ## SGX2 version of the code ###
 There are few changes in the SGX2 version of the code in comparison to SGX1, includeing:
+
 - adding -lsgx_pthread link flag in Makefile
 - importing "sgx_pthread.edl" in OMAP.edl and Enclave.edl
 - replacing the remote attestation code of Enclave.cpp with the new version of SGXSDK
+- 
 SGX2 version of Omix++ is available in [Omix++-SGX2 branch](https://github.com/jgharehchamani/graphos/tree/Omix%2B%2B-SGX2)
 
 ## Getting Started ###
