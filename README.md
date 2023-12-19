@@ -27,7 +27,7 @@ There are few changes in the SGX2 version of the code in comparison to SGX1, inc
 - adding -lsgx_pthread link flag in Makefile
 - importing "sgx_pthread.edl" in OMAP.edl and Enclave.edl
 - replacing the remote attestation code of Enclave.cpp with the new version of SGXSDK
-- 
+
 SGX2 version of Omix++ is available in [Omix++-SGX2 branch](https://github.com/jgharehchamani/graphos/tree/Omix%2B%2B-SGX2)
 
 ## Getting Started ###
